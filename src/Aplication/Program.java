@@ -18,21 +18,28 @@ public class Program {
 		//cadastro:
 		System.out.print("Enter account number: ");
 		int number = sc.nextInt();
-		System.out.print("Enter account holder: "); 
+		System.out.print("Enter account holder: ");
 		sc.nextLine();
 		String name = sc.nextLine();
+		System.out.print("Enter holder cpf: ");
+		long cpf = sc.nextLong();
+		System.out.print("Enter holder phone: ");
+		long phone = sc.nextLong();
+		System.out.print("Enter holder email: ");
+		sc.nextLine();
+		String email = sc.nextLine();
 		System.out.print("Is there na initial deposit (y/n)? ");
+		char resp = sc.next().charAt(0);
 		
 		//depósito inicial opcional:
-		char resp = sc.next().charAt(0);
 		if(resp == 'y') {
 			System.out.print("Enter initial deposit value: R$");
 			double value = sc.nextDouble();
-			account = new Account(number, name, value);
+			account = new Account(number, name, cpf, phone, email, value);
 		}
 		else {
 			
-			account = new Account(number, name);
+			account = new Account(number, name, cpf, phone, email);
 		}
 		
 		System.out.println();
@@ -48,7 +55,7 @@ public class Program {
 		System.out.println("Updated account data:\n" + account);
 		System.out.println();
 		
-		//saque (taixa de R$ 5.00/saque):
+		//saque (taxa de R$ 5.00/saque):
 		System.out.print("Enter a withdraw value: R$");
 		value = sc.nextDouble();
 		account.withdraw(value);
