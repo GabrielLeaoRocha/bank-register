@@ -127,11 +127,11 @@ public class Account {
 	//toString
 	public String toString() {
 		
-		return  "Account "
+		return  "-Account: "
 				+numberAccount
-				+", Holder: "
+				+"\n-Holder: "
 				+name
-				+", Balance: R$"
+				+"\n-Balance: R$"
 				+String.format("%.2f",balance);
 	}
 
