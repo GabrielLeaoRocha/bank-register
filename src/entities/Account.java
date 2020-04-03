@@ -3,6 +3,7 @@ package entities;
 public class Account {
 	private Integer numberAccount;
 	private String name;
+	private String password;
 	private Double balance = 0.0;
 	private Long cpf;
 	private Long phone;
@@ -37,9 +38,34 @@ public class Account {
 		deposit(initialDeposit);
 	}
 	
+	public Account(Integer numberAccount, String name, String password, Long cpf, Long phone, String email, double initialDeposit) {
+		this.numberAccount = numberAccount;
+		this.name = name;
+		this.password = password;
+		this.balance = balance;
+		this.cpf = cpf;
+		this.phone = phone;
+		this.email = email;
+		deposit(initialDeposit);
+	}
+	
+	public Account(Integer numberAccount, String name, String password, Long cpf, Long phone, String email) {
+		this.numberAccount = numberAccount;
+		this.name = name;
+		this.password = password;
+		this.cpf = cpf;
+		this.phone = phone;
+		this.email = email;
+	}
+
 	//getters and setters
-	public int getNumberCount() {
+	
+	public Integer getNumberAccount() {
 		return numberAccount;
+	}
+
+	public void setNumberAccount(Integer numberAccount) {
+		this.numberAccount = numberAccount;
 	}
 
 	public String getName() {
@@ -49,9 +75,41 @@ public class Account {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public double getBalance() {
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Double getBalance() {
 		return balance;
+	}
+
+	public Long getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(Long cpf) {
+		this.cpf = cpf;
+	}
+
+	public Long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Long phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	//metodos
